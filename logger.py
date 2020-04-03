@@ -7,6 +7,7 @@ from IPython import display
 from matplotlib import pyplot as plt
 import torch
 
+""" All the utilities required for displaying the output and saving Tensorborad outputs are defined """
 
 class Logger:
 
