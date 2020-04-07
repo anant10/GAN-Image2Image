@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 import torch
-from torch import nn, optim
+from torch import nn
+from torch.optim import Adam
 from vanillaGAN import DiscriminatorNN
 from vanillaGAN import GeneratorNN
 from logger import Logger
@@ -18,13 +19,14 @@ data_loader = torch.utils.data.DataLoader(data, batch_size=100, shuffle=True)
 num_batches = len(data_loader)
 
 discriminator = DiscriminatorNN()
-discriminator.cuda()
-
 generator = GeneratorNN()
-generator.cuda()
 
-d_optimizer = optim.Adam(discriminator.parameters(), lr=0.0002)
-g_optimizer = optim.Adam(generator.parameters(), lr=0.0002)
+if torch.cuda.is_available():
+    generator.cuda()
+    discriminator.cuda()
+
+d_optimizer = Adam(discriminator.parameters(), lr=0.0002)
+g_optimizer = Adam(generator.parameters(), lr=0.0002)
 loss = nn.BCELoss()
 
 
