@@ -28,14 +28,14 @@ greater or equal cost. The solution to a game is a Nash equilibrium.
 ### Implementations:
 For detailed explanation about implementation please read Section 4.2 in [this](https://github.com/anant10/GAN-Text2Image-ReverseOCR/blob/master/Text%20to%20Image%20Synthesis%20using%20GAN%20Final%20Report.pdf) report.
 
-####1. Vanilla GAN
+#### 1. Vanilla GAN
 This is the simplest type of GAN. Here the Generator and Discriminator are simple fully connected neural networks.
 
 ![](images/VanillaGan.JPG)
 Details to build this network : [section 4.2.1](https://github.com/anant10/GAN-Text2Image-ReverseOCR/blob/master/Text%20to%20Image%20Synthesis%20using%20GAN%20Final%20Report.pdf)
 
 
-####2. DEEP CONVOLUTIONAL GAN (DCGAN)
+#### 2. DEEP CONVOLUTIONAL GAN (DCGAN)
 This is a successful implementation of GAN where generator and discriminators are deep convolutional neural
 networks. They generate highly compelling images. The adversarial pair learns a hierarchy of representations from
 object parts to scenes in both the generator and discriminators. The correlation between different object parts in a
@@ -45,7 +45,7 @@ scene is captured by CNN whereas fully connected layers failed at this.
 Details to build this network : [section 4.2.2](https://github.com/anant10/GAN-Text2Image-ReverseOCR/blob/master/Text%20to%20Image%20Synthesis%20using%20GAN%20Final%20Report.pdf)
 
 ### Empirical results:
-####VANILLA GAN
+#### VANILLA GAN
 
 Vanilla GAN takes huge number of iterations to generate distinguishable images which in turn consumes hours of
 training time. We had to run at least 200 iterations to generate the images as shown in the second figure below. We
@@ -67,7 +67,7 @@ images.
 
 
 
-####DCGAN
+#### DCGAN
 
 DCGAN captures the correlation between different object parts in an image, hence better accurate image generation
 results. We could achieve high quality image generation with only 10 iterations consuming 1/10th the training time of
